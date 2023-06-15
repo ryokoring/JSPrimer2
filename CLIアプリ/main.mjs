@@ -1,8 +1,12 @@
 import { program } from "commander";
+// fs/promisesモジュールをfsオブジェクトとしてインポートする
+import * as fs from "node:fs/promises";
 
-// コマンドライン引数をcommanderでパースする
+// コマンドライン引数からファイルパスを取得する
 program.parse(process.argv);
-console.log(program)
-// ファイルパスをprogram.args配列から取り出す
 const filePath = program.args[0];
-console.log(filePath);
+
+// ファイルを非同期で読み込む
+fs.readFile(filePath).then(file => {
+    console.log(file);
+});
