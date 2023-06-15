@@ -1,0 +1,6 @@
+{
+  "description": "",
+  "dependencies": {
+    "commander": "9.0"
+  }
+}
